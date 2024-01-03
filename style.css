@@ -334,10 +334,7 @@ text-align: center;
 /*FOOTER*/
 footer {
 	background-color:  #1F2125;
-	display: flex;
-	text-align: center;
-	justify-content: center;
-	background-color: ;
+text-align: center;
  	
 }
 
@@ -372,7 +369,5 @@ footer {
  .contact-right{
 
  }
- footer{
- 		flex-direction: column;
- }
+
 }
