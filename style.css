@@ -37,24 +37,39 @@ a{
 
 /*REUSABLE STYLES*/
 
+.flex-column-center{
+	display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+
+}
 
 /*HEADER STYLES*/
 .header{
 	position: fixed;
-	right: 4vw;
+	width: 100%;
 	z-index: 2;
 }
 .nav{
 	display: flex;
+	justify-content: space-between;
 	border-bottom-left-radius: 10px;
 	backdrop-filter: blur(3px);
-	box-shadow: 0 -8px 10px -5px red; 
 
 	padding: 30px;
 }
+.nav h1{
+	font-size: 2rem;
+}
+
 .list{
 	display: flex;
 	gap: 50px;
+box-shadow:  -5px  0 13px #211e1e,
+             5px 0 13px #3030;
+
 }
 .list-links{
 	cursor: pointer;
@@ -106,8 +121,8 @@ a{
 }
 .main-text{
     display: inline;	
-    background: linear-gradient( transparent 0%,transparent 30%,rgba(200, 50, 50,.3) 40%,rgba(200, 10, 10,.3),50%,transparent 60%, transparent 100%);
-	font-size: 6rem;
+    background: linear-gradient( transparent 0%,transparent 30%,rgba(200, 50, 50,.1) 40%,rgba(200, 10, 10,.1),60%,transparent 50%, transparent 100%);
+	font-size:clamp(5rem, 10vw, 10rem);
 	mix-blend-mode: difference;
 	font-family:'Rubik Lines' ;
 	letter-spacing: 30px;
@@ -118,6 +133,38 @@ a{
 	bottom: 1rem;
 	right: 10vw;
 	width:15rem;
+}
+
+
+/*ABOUT*/
+.about{
+  background: chocolate ;
+  color: beige;
+
+}
+.about-container{
+	width: ;
+	padding: 20px;
+
+}
+.about-title{
+  padding: 30px auto 6px;
+  border-bottom: 2px solid red;
+}
+.about-desc{
+	width: 80%;
+}
+.achievement{
+	padding: 10px ;
+	border-bottom: 3px dashed grey;
+}
+
+/*SERVICES*/
+.services{
+
+}
+.services-container{
+
 }
 
 /*CONTACT*/
