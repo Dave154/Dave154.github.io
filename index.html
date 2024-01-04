@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+  rel="stylesheet"
+  href='swiper-bundle.min.css'
+/>
  	<link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My PortFolio</title>
@@ -117,19 +121,82 @@
        </section>
        <section id="reviews" class="reviews">
          <div class="reviews-container">
-           <h3>Reviews</h3>
-           <h2>Positive reviews from our clients</h2>
-           <div class="review-slide">
-             <div>het</div>
-             <div>het</div>
-             <div>het</div>
-             <div>het</div>
-             <div>het</div>
-             <div>het</div>
-             <div>het</div>
-           </div>
+           <h3 class="pre-title">Reviews</h3>
+           <h2 class="section-title">Positive reviews from our clients</h2>
+           <div class="swiper">
+             
+               <div class="review-slide swiper-wrapper">
+                <article class="swiper-slide review">
+                   <div class="card-content">
+                    <div class="card-image"> 
+                     <img src="mic-img.jpg" alt="img" class="card-img" width="200px" height="200px">
+                     <div class="blur"></div>
+                    </div>
+                     <div class="card-data">
+                       <h5 class="card-name">Lorem eid</h5>
+                       <p class="card-desc">
+                        <i class="fa fa-quote-left" aria-hidden="tru"></i>
+                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, excepturi! <i class="fa fa-quote-right" aria-hidden="tru"></i>
+                       </p>
+                     </div>
+                   </div>
+                </article>
+                <article class="swiper-slide review">
+                   <div class="card-content">
+                    <div class="card-image"> 
+                     <img src="mic-img.jpg" alt="img" class="card-img" width="200px" height="200px">
+                     <div class="blur"></div>
+                    </div>
+                     <div class="card-data">
+                       <h5 class="card-name">Lorem eid</h5>
+                       <p class="card-desc">
+                        <i class="fa fa-quote-left" aria-hidden="tru"></i>
+                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, excepturi! <i class="fa fa-quote-right" aria-hidden="tru"></i>
+                       </p>
+                     </div>
+                   </div>
+                </article>
+                 <article class="swiper-slide review">
+                   <div class="card-content">
+                    <div class="card-image"> 
+                     <img src="mic-img.jpg" alt="img" class="card-img" width="200px" height="200px">
+                     <div class="blur"></div>
+                    </div>
+                     <div class="card-data">
+                       <h5 class="card-name">Lorem eid</h5>
+                       <p class="card-desc">
+                        <i class="fa fa-quote-left" aria-hidden="tru"></i>
+                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, excepturi! <i class="fa fa-quote-right" aria-hidden="tru"></i>
+                       </p>
+                     </div>
+                   </div>
+                </article>
+                 <article class="swiper-slide review">
+                   <div class="card-content">
+                    <div class="card-image"> 
+                     <img src="mic-img.jpg" alt="img" class="card-img" width="200px" height="200px">
+                     <div class="blur"></div>
+                    </div>
+                     <div class="card-data">
+                       <h5 class="card-name">Lorem eid</h5>
+                       <p class="card-desc">
+                        <i class="fa fa-quote-left" aria-hidden="tru"></i>
+                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, excepturi! <i class="fa fa-quote-right" aria-hidden="tru"></i>
+                       </p>
+                     </div>
+                   </div>
+                </article>
+               </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev swiper-controls">
+                  <i class="fa fa-caret-left" aria-hidden="true"></i>
+                </div>
+                <div class="swiper-button-next swiper-controls"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
          </div>
+      </div>
+
        </section>
+
        <section class='contact' id='contact'>
        	<div class="contact-container">
        		<div class="contact-left">
@@ -184,6 +251,7 @@
           &copy; Copyright 2024
         </span>  <span>ene.</span>
        </footer>
+       <script src="swiper-bundle.min.js"></script>
        <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

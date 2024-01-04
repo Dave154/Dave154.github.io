@@ -33,4 +33,30 @@ const toggleBtn = document.querySelector('.toggle-menu')
  	}else{
  		nav.classList.remove('active')
  	}
- }
+  }
+
+const swiper = new Swiper('.swiper', {
+  loop: true,
+  grabCursor:true,
+   slidesPerView:1,
+   spaceBetween:40,
+autoplay:{
+    delay:2000,
+   },
+   speed:1000,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable:true,
+    dynamicBullets:true
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints:{
+    1000:{
+        slidesPerView:2,
+    },
+  }
+});

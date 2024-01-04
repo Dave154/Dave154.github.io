@@ -33,6 +33,10 @@ a{
 	text-decoration: none;
 	color: inherit;
 }
+h1,h2,h3,h4,h6{
+	margin: 0;
+	padding: 0;
+}
 /*i{
 	color: white;
 }*/
@@ -80,7 +84,7 @@ text-align: center;
 	display: flex;
 	justify-content: space-between;
 	border-bottom-left-radius: 10px;
-	padding: 30px;
+	padding:0  30px;
 }
 
 .nav h1{
@@ -124,7 +128,7 @@ text-align: center;
 .list{
 	position: absolute;
 	right: -5px;
-	top: 0;
+	top: -2rem;
 	width: 15rem;
 	height: 100vh;
 	background-color: beige;
@@ -133,7 +137,7 @@ text-align: center;
 	border-radius: 5px;
 	padding: 10px 20px;
 	opacity: 0;
-/*	gap: 10px;*/
+
 	transition: transform 1s , opacity .5s;
     transform-origin: right;
 }
@@ -237,8 +241,6 @@ text-align: center;
 
 /*SERVICES*/
 .services{
- /*background-color: beige;
- color: black;*/
  padding: ;
 }
 .services-container{
@@ -257,6 +259,86 @@ text-align: center;
 .service{
 	padding: 0 100px;
 }
+
+/*REVIEWS*/
+.reviews{
+	height: 100vh;
+}
+.reviews-container{
+	padding:0 20px;
+	width: ;
+	text-align: center;
+	margin: 0 auto;
+}
+.review-slide{
+	padding: 40px 0;
+
+}
+.review {
+	border-radius: 10px;
+	background-color: rgba(200, 200, 200, .5);
+}
+
+.card-image{
+	position: relative;
+/*background-color: chocolate;*/
+width: auto;
+border-radius: 10px;
+}
+.card-img{
+ filter: grayscale(100%);
+	border-radius: 50%;
+	z-index: 1;
+}
+.card-name{
+
+	margin: 0;
+	font-size: 2rem;
+	font-family: ;
+}
+.card-desc{
+	width: 90%;
+	margin: 0 auto;
+}
+.blur{
+	position: absolute;
+	top: 2rem;
+	left: 20%;
+	display: block;
+	width: 100px;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	background-color:rgba(255, 20, 47, .7);
+	filter: blur(70px);
+}
+.swiper-controls::after{
+	content: '';
+}
+.swiper-controls{
+	width: initial;
+	height: initial;
+	font-size: 2.5rem;
+	color: chocolate;
+}
+.swiper-pagination{
+	position: relative;
+	bottom: -4rem;
+
+}
+.swiper-button-next{
+	right: 0;
+}
+.swiper-button-prev{
+	left: 0;
+}
+.swiper-pagination-bullet{
+	background-color: beige;
+	opacity: 1;
+}
+.swiper-pagination-bullet-active{
+	background-color: chocolate;
+}
+
 /*CONTACT*/
 
 .contact{
@@ -289,7 +371,7 @@ text-align: center;
 .contact-info > div{
 	width: 90%;
 	display: flex;
-	gap: 2px;
+	gap: 9px;
 	margin-bottom: 20px;
 }
 .contact-info h6{
@@ -334,7 +416,8 @@ text-align: center;
 /*FOOTER*/
 footer {
 	background-color:  #1F2125;
-text-align: center;
+  text-align: center;
+  width: 100vw;
  	
 }
 
@@ -365,6 +448,13 @@ text-align: center;
 .achievement:nth-child(3){
 	border: none;
 }
+
+/*REVIEWS*/
+.swiper-controls{
+	display: none;
+}
+
+
 /* CONTACT*/
  .contact-right{
 
