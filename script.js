@@ -97,8 +97,7 @@ serviceCard.forEach(card=>{
        
 
 
-
-  // SWIPER
+ // SWIPER
 
 const swiper = new Swiper('.swiper', {
   loop: true,
@@ -125,3 +124,36 @@ autoplay:{
     },
   }
 });
+
+// INTERSECTION OBSERVER
+const hero = document.querySelector('.hero')
+const about = document.querySelector('.about')
+const Services = document.querySelector('.services')
+const options ={
+    rootMargin:'0px',
+    threshold:.5
+}
+
+const func=(entries)=>{
+ entries.forEach(entry=>{
+    if (entry.isIntersecting) {
+        console.log(entry.target)
+        if (entry.target.id === 'Home') {
+            entry.target.classList.add('scroll')
+        }
+        if (entry.target.id === 'About') {
+            entry.target.classList.add('scroll')
+        }
+        if (entry.target.id === 'Services') {
+            entry.target.classList.add('scroll')
+        }
+   
+
+    }
+    })
+}
+
+const observer = new IntersectionObserver(func,options)
+observer.observe(hero)
+observer.observe(about)
+observer.observe(Services)
