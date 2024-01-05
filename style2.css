@@ -90,8 +90,12 @@ h1,h2,h3,h4,h6{
     gap: 40px;
 }
 .list-items{
-	padding: 10px;
 	border-radius: 10px;
+	padding: 10px;
+}
+.list-links{
+	padding-right:  150px;
+/*	background-color: red;*/
 }
 .list-items:hover{
 	background-color: color-mix(in srgb , transparent 70%, black 20%);
@@ -170,10 +174,10 @@ h1,h2,h3,h4,h6{
 .about-container{
 	display: grid;
 	gap: 30px;
+	height: auto;
 	padding: 20px 50px;
-	max-width: 70rem;
+	max-width: 80rem;
 	margin-inline: auto;
-	height: 25rem;
 	grid-template-columns: repeat(auto-fit, minmax(350px , 1fr));
 }
 .about-image{
@@ -205,11 +209,8 @@ h1,h2,h3,h4,h6{
 }
 .about-deets-container{
 	position: relative;
-	display: flex;
 }
 .deets-content{
-
-	position: absolute;
 	display: none ;
 }
 .deet:not(:first-child){
@@ -229,4 +230,260 @@ h1,h2,h3,h4,h6{
 .deets-content.active{
 	display: block;
 }
+
+
+
+/*SERVICES*/
+.services{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding: 90px 0;
+
+}
+.about-services{
+	position:absolute;
+	display: none;
+	width: 90%;
+	height: 100%;
+	z-index: 2;
+	backdrop-filter: blur(1px);
+}
+.about-services > div{
+   position: relative;
+   max-width:  40rem;
+   width: 100%;
+   margin:  auto;
+   background-color: grey;
+}
+
+.about-service{
+	position: absolute;
+	background-color:chocolate;
+	box-shadow: inset 0 0 5px beige;
+	padding: 20px ;
+	border-radius: 20px;
+	opacity: 0;
+}
+.services-container{
+	width: 90%;
+	margin: 0 auto;
+}
+.service-cards{ 
+	display: grid;
+	margin-top: 20px;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(300px ,1fr));
+}
+.service-card{
+	position: relative;
+	background-color: grey;
+	padding: 20px;
+	width: 90%;
+	margin-inline: auto;
+	border-radius: 10px;
+	text-align: left;
+	transition: background .5s ,transform .5s;
+}
+.service-card h6{
+	font-size: 1.5rem;
+	margin-block: 30px;
+}
+.more-info{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: chocolate;
+	padding: 10px;
+	border-radius: 5px;
+	display: none;
+}
+.service-card:hover{
+	background: goldenrod;
+	transform: translateY(-10px);
+}
+.service-card:hover .more-info{
+	display: block;
+}
+.remove-service-btn{
+	font-size: 1.5rem;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	background:transparent;
+}
+
+/*SERVICE JS STYLES*/
+ .about-service.active{
+ 	opacity: 1;
+ 	transform: scale(1.0);
+ }
+ .about-services.active{
+ 	display:block;
+ }
+
+/*REVIEWS*/
+.reviews{
+	height: 100vh;
+}
+.reviews-container{
+	padding:0 20px;
+	width: ;
+	text-align: center;
+	margin: 0 auto;
+}
+.review-slide{
+	padding: 40px 0;
+
+}
+.review {
+	border-radius: 10px;
+	background-color: rgba(200, 200, 200, .5);
+}
+
+.card-image{
+	position: relative;
+/*background-color: chocolate;*/
+width: auto;
+border-radius: 10px;
+}
+.card-img{
+ filter: grayscale(100%);
+	border-radius: 50%;
+	z-index: 1;
+}
+.card-name{
+
+	margin: 0;
+	font-size: 2rem;
+	font-family: ;
+}
+.card-desc{
+	width: 90%;
+	margin: 0 auto;
+}
+.blur{
+	position: absolute;
+	top: 2rem;
+	left: 20%;
+	display: block;
+	width: 100px;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	background-color:rgba(255, 20, 47, .7);
+	filter: blur(70px);
+}
+.swiper-controls::after{
+	content: '';
+}
+.swiper-controls{
+	width: initial;
+	height: initial;
+	font-size: 2.5rem;
+	color: chocolate;
+}
+.swiper-pagination{
+	position: relative;
+	bottom: -4rem;
+
+}
+.swiper-button-next{
+	right: 0;
+}
+.swiper-button-prev{
+	left: 0;
+}
+.swiper-pagination-bullet{
+	background-color: beige;
+	opacity: 1;
+}
+.swiper-pagination-bullet-active{
+	background-color: chocolate;
+}
+
+
+/* CONTACT */
+.contact{
+	width: 100vw;
+		background-color: #1F2125;
+
+}
+.contact-container{
+	padding: 3rem;
+	display: flex;
+	justify-content: space-between;
+}
+.contact-left{
+ flex-basis: 70%;
+ padding: 0;
+/* background-color: grey;*/
+}
+.contact-left h2{
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	letter-spacing: 5px;
+	font-size: clamp(.4rem, 2vw, 2rem);
+}
+.contact-info{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	max-width: 30rem;
+}
+.contact-info > div{
+	width: 90%;
+	display: flex;
+	gap: 9px;
+	margin-bottom: 20px;
+}
+.contact-info h6{
+	margin: 0;
+	letter-spacing: 3px;
+	font-size:clamp(.2rem, 2vw, 1.6rem);
+}
+.contact-info p{
+	margin: 0;
+	width: 20%;
+}
+.socials{
+	display: flex;
+	gap: 20px;
+
+}
+.contact-right{
+	display: grid;
+	width: auto;
+	flex-basis: 30%;
+
+}
+.contact-right span{
+	width: clamp(6rem, 30vw, 25rem);
+	aspect-ratio: 2/1
+}
+.contact-img{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+
+}.contact-right span:nth-child(1){
+	grid-column: 4/7;
+	grid-row: 1 / span 4;
+}
+.contact-right span:nth-child(2){
+	grid-column: 5/10;
+	grid-row:  3/ span 10 ;
+}
+
+/*FOOTER*/
+footer {
+	background-color:  #1F2125;
+  text-align: center;
+  width: 100vw;
+ 	
+}
+
 
