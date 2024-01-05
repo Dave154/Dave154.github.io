@@ -77,7 +77,7 @@ h1,h2,h3,h4,h6{
 	display: flex;
 	justify-content: space-between;
 	border-bottom-left-radius: 10px;
-	padding:  30px;
+	padding: 10px 30px;
 }
 .nav h1{
 	font-size: 2.5rem;
@@ -640,6 +640,13 @@ footer {
 }
 .heading{
 	max-width: none;
+}
+.sub-text{
+	position: relative;
+	z-index: 1;
+	max-width: none;
+	right: 0;
+	bottom:0;
 }
 }
 
