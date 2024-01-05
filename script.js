@@ -26,14 +26,42 @@ const toggleBtn = document.querySelector('.toggle-menu')
  })
 
  window.onscroll=()=>{
- 	const nav = document.querySelector('.nav')
- 	if (scrollY >= 400) {
- 		const nav = document.querySelector('.nav')
- 		nav.classList.add('active')
+ 		const header = document.querySelector('.header')
+ 	if (scrollY >= 200) {
+ 		header.classList.add('active')
  	}else{
- 		nav.classList.remove('active')
+ 		header.classList.remove('active')
  	}
   }
+
+
+
+
+
+
+// ABOUT   
+const tabs = document.querySelectorAll('.about-tab');
+const deets = document.querySelectorAll('.deets-content')
+tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+        for(deet of deets){
+            deet.classList.remove('active')
+        }
+        deets.forEach((deet,index)=>{
+            if (deet.classList[1] === tab.textContent.toLowerCase()) {
+                deet.classList.add('active')
+            }
+        })
+        for(item of tabs){
+            item.classList.remove('active')
+        }
+        tab.classList.add('active')
+    })
+})
+
+
+
+  // SWIPER
 
 const swiper = new Swiper('.swiper', {
   loop: true,

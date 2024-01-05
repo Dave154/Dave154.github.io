@@ -1,7 +1,6 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Diphylleia&family=Rubik+Lines&family=Tangerine&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Diphylleia&family=Montserrat:wght@500&family=Rubik+Lines&family=Tangerine&display=swap')
-
+  @import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Dancing+Script&family=Diphylleia&family=Montserrat:wght@500&family=Rubik+Lines&family=Tangerine&display=swap');
 
 /* ROOT STYLES*/
 *{
@@ -10,8 +9,8 @@
 	box-sizing: border-box;
 }
 
-.root{
-	--font-1:'montserrat-medium', monospace;
+:root{
+	--font-1: 'Dancing Script', cursive;
 
 }
 html{
@@ -159,6 +158,7 @@ text-align: center;
 
 /*HERO STYLES*/
 .hero{
+		background:linear-gradient( 135deg, #000,rgba(0, 0, 30, 1.0));
 	display: grid;
 	place-items: center;
 	height: 100vh;
@@ -171,7 +171,7 @@ text-align: center;
 	height: 100%;
 	left: 0;
 	object-fit: cover;
-	filter: grayscale(90%);
+	filter: grayscale(50%);
 }
 .heading{
 	position: relative;
