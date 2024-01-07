@@ -1,15 +1,12 @@
 
 // NavToggle
-const toggleBtn = document.querySelector('.toggle-menu')
- 	const list = document.querySelector('.list')
+const toggleBtn = document.querySelector('.toggle-menu');
+ 	const list = document.querySelector('.list');
  
  toggleBtn.addEventListener('click',()=>{
  	const listItems = document.querySelectorAll('.list-items')
  	list.classList.toggle('active')
  	listItems.forEach(link=>{
- 	// link.addEventListener('click',()=>{
- 	// 	list.classList.remove('active')
- 	// }) 
  	})
  })
  document.addEventListener('click',(e)=>{
@@ -24,20 +21,14 @@ const toggleBtn = document.querySelector('.toggle-menu')
   }
  })
 
- window.onscroll=()=>{
+ document.querySelector('.container').onscroll=(e)=>{
  		const header = document.querySelector('.header')
- 	if (scrollY >= 200) {
+ 	if (e.target.scrollTop>= 800) {
  		header.classList.add('active')
  	}else{
  		header.classList.remove('active')
  	}
   }
-
-
-
-
-
-
 // ABOUT   
 const tabs = document.querySelectorAll('.about-tab');
 const deets = document.querySelectorAll('.deets-content')
@@ -63,10 +54,6 @@ tabs.forEach(tab=>{
 const serviceCard = document.querySelectorAll('.service-card')
  const aboutServices = document.querySelectorAll('.about-service')
  const removeServiceBtn = document.querySelectorAll('.remove-service-btn')
-
-console.log(removeServiceBtn)
-
-
 serviceCard.forEach(card=>{
     card.addEventListener('click',()=>{
         for(service of aboutServices){
@@ -74,26 +61,26 @@ serviceCard.forEach(card=>{
         }
         aboutServices.forEach(service=>{
             if (service.classList[1] === card.classList[1]) {
-            console.log(service.parentElement.parentElement)
                 service.classList.add('active')
                 service.parentElement.parentElement.classList.add('active')
             }
         })
-        // for(item of tabs){
-        //     item.classList.remove('active')
-        // }
-        // tab.classList.add('active')
     })
 })
-            removeServiceBtn.forEach(btn=>{
-            btn.addEventListener('click', ()=>{
-                console.log('hey')
-                for(service of aboutServices){
-                service.classList.remove('active')
-                service.parentElement.parentElement.classList.remove('active')
-        }
-            })
-            })
+const remove =()=>{
+    for(service of aboutServices){
+    service.classList.remove('active')
+    service.parentElement.parentElement.classList.remove('active')
+ }
+}
+removeServiceBtn.forEach(btn=>{
+btn.addEventListener('click', remove)
+document.onkeyup=(e)=>{
+    if (e.key=== 'Escape') {
+        remove()
+    }
+}
+})
        
 
 
@@ -137,7 +124,6 @@ const options ={
 const func=(entries)=>{
  entries.forEach(entry=>{
     if (entry.isIntersecting) {
-        console.log(entry.target)
         if (entry.target.id === 'Home') {
             entry.target.classList.add('scroll')
         }
@@ -149,6 +135,7 @@ const func=(entries)=>{
         }
    
 
+    observer.unobserve(entry.target)
     }
     })
 }
