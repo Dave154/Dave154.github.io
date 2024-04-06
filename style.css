@@ -43,8 +43,7 @@ h1,h2,h3,h4,h6{
 	overflow-y: auto;
 	background-color: black;
 	color: beige;
-	scroll-snap-type: y mandatory;
-}
+	}
 .container section{
 	scroll-snap-align:start;
 }

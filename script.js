@@ -1,4 +1,7 @@
-
+const hero = document.querySelector('.hero')
+const about = document.querySelector('.about')
+const Services = document.querySelector('.services')
+console.log(hero.getBoundingClientRect())
 // NavToggle
 const toggleBtn = document.querySelector('.toggle-menu');
  	const list = document.querySelector('.list');
@@ -23,7 +26,7 @@ const toggleBtn = document.querySelector('.toggle-menu');
 
  document.querySelector('.container').onscroll=(e)=>{
  		const header = document.querySelector('.header')
- 	if (e.target.scrollTop>= 800) {
+ 	if (e.target.scrollTop>= 100) {
  		header.classList.add('active')
  	}else{
  		header.classList.remove('active')
@@ -113,9 +116,6 @@ autoplay:{
 });
 
 // INTERSECTION OBSERVER
-const hero = document.querySelector('.hero')
-const about = document.querySelector('.about')
-const Services = document.querySelector('.services')
 const options ={
     rootMargin:'0px',
     threshold:.5
