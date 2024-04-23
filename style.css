@@ -9,7 +9,7 @@
 }
 
 :root{
-	--font-1: 'Dancing Script', cursive;
+	--font-1: 'Dancing Script';
 	--font-2:'Rubik Lines',serif;
 	--font-3: cursive;
 	--font-4:'Diphylleia',cursive;
@@ -38,6 +38,8 @@ h1,h2,h3,h4,h6{
 	padding: 0;
 }
 .container{
+	background:linear-gradient(135deg,transparent,#100);
+
 	scroll-behavior: smooth;
 	height: 100vh;
 	overflow-y: auto;
@@ -151,13 +153,14 @@ h1,h2,h3,h4,h6{
 /*HERO STYLES*/
 .hero{
 	height: 100vh;
+	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 	justify-content: center;
 	color: white;
 	position: relative ;
-	background:linear-gradient(135deg,transparent,#100);
+	background:linear-gradient(140deg,black,70%,#100);
 }
 .hero img{
 	position: absolute;
@@ -167,21 +170,15 @@ h1,h2,h3,h4,h6{
 	object-fit: cover;
 	filter: grayscale(100%);
 }
-.hero-container{
-	margin-left: 10vw;
-
-
-}
 .heading{
-	max-width:70vw;
-	margin: 0 auto;
+	display: grid;
+	justify-content: center;
 	position: relative;
 	z-index: 1;
 	mix-blend-mode: difference;
-	overflow: hidden;
 	opacity: 0;
-	padding: 20px;
 	transition: opacity 2s;
+	
 }
 .text1{
   font-family: var(--font-1) ;
@@ -191,12 +188,14 @@ h1,h2,h3,h4,h6{
 	transition: transform 1s .5s;
 }
 .main-text{
+	width: 100%;
 	font-family: var(--font-1);
-	font-size: clamp(4rem, 12vw, 14rem);
+	font-size: clamp(3rem, 12vw, 14rem);
 	letter-spacing: 7px;
 	text-transform: uppercase;
-	transform: translateX(100%);
-	transition: transform 1s 1s;
+	transform: translateX(150%) scale(0);
+	
+	transition: transform 1s 1s ;
 }
 .text2{
 	font-family: var(--font-1);
@@ -231,12 +230,14 @@ h1,h2,h3,h4,h6{
 	display: grid;
 	gap: 30px;
 	height: auto;
+	place-items: center;
 	padding: 20px 50px;
 	max-width: 80rem;
 	margin-inline: auto;
 	grid-template-columns: repeat(auto-fit, minmax(350px , 1fr));
 }
 .about-image{
+	height: 80%;
 	visibility: hidden;
 	opacity: 0;
 	transform: translate(-100%,-50px);
@@ -252,7 +253,7 @@ h1,h2,h3,h4,h6{
 	width: 100%;
 	height: 100%;
 	border-radius: 10px;
-	object-fit: ;
+	object-fit:cover ;
 }
 .about-context{
 	transition-delay: 300ms;
@@ -470,8 +471,9 @@ visibility: visible;
 	height: 100%;
 }
 .reviews-container{
-	padding:0 20px;
-	width: ;
+	padding:20px;
+	width: 100%;
+	max-width: 	80rem;
 	text-align: center;
 	margin: 0 auto;
 }
@@ -481,7 +483,9 @@ visibility: visible;
 }
 .review {
 	border-radius: 10px;
-	background-color: rgba(200, 200, 200, .5);
+	height: 20rem;
+	color: #1c1c1c;
+	background-color: grey;
 }
 
 .card-image{
@@ -596,6 +600,9 @@ border-radius: 10px;
 	gap: 20px;
 
 }
+.socials a:hover{
+	color: chocolate;
+}
 .contact-right{
 	display: grid;
 	width: auto;
@@ -604,7 +611,7 @@ border-radius: 10px;
 }
 .contact-right span{
 	
-	width: clamp(6rem, 31vw, 25rem);
+	width: clamp(1rem, 31vw, 25rem);
 	height: 11rem;
 	aspect-ratio: 2/1
 }
@@ -648,21 +655,20 @@ footer {
 	max-width: none;
 }
 .sub-text{
-	position: relative;
-	z-index: 1;
+	/*position: relative;
+	z-index: 1;*/
 	max-width: none;
 	width: 90%;
-	right: 0;
-	bottom:0;
 }
-.contact-right span{
+/*.contact-right span{
 	display: none;
-}
+}*/
 }
 
 
 ::-webkit-scrollbar{
 	width: 6px;
+	height: 0;
 	background-color: black;
 }
 ::-webkit-scrollbar-thumb{
