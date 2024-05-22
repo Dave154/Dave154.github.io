@@ -161,7 +161,9 @@ h1,h2,h3,h4,h6{
 	color: black;
 }
 .header.active{
- backdrop-filter: blur(13px);
+	background: rgba(0, 0, 0, .5);
+	backdrop-filter: blur(5px);
+
 }
 
 /*HERO STYLES*/
