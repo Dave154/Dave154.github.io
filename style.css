@@ -350,7 +350,7 @@ visibility: visible;
 	height: 100%;
    padding: 0 50px;
 	z-index: 2;
-	backdrop-filter: blur(70px);
+	background: rgba(2, 23, 20, .9);
 }
 .about-services > div{
    position: relative;
