@@ -28,7 +28,7 @@ const toggleBtn = document.querySelector('.toggle-menu');
 
  document.querySelector('.container').onscroll=(e)=>{
  		const header = document.querySelector('.header')
- 	if (e.target.scrollTop>= 1) {
+ 	if (e.target.scrollTop>= 0) {
  		header.classList.add('active')
  	}else{
  		header.classList.remove('active')
