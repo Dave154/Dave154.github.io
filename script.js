@@ -1,6 +1,8 @@
 const hero = document.querySelector('.hero')
 const about = document.querySelector('.about')
 const Services = document.querySelector('.services')
+const Reviews = document.querySelector('.reviews')
+const work_Info= document.querySelectorAll('.work-info')
 console.log(hero.getBoundingClientRect())
 // NavToggle
 const toggleBtn = document.querySelector('.toggle-menu');
@@ -26,7 +28,7 @@ const toggleBtn = document.querySelector('.toggle-menu');
 
  document.querySelector('.container').onscroll=(e)=>{
  		const header = document.querySelector('.header')
- 	if (e.target.scrollTop>= 100) {
+ 	if (e.target.scrollTop>= 1) {
  		header.classList.add('active')
  	}else{
  		header.classList.remove('active')
@@ -86,7 +88,32 @@ document.onkeyup=(e)=>{
 })
        
 
-
+//VIDEOS
+const videos= document.querySelectorAll('.video')
+console.log(videos[0])
+const playBtn=document.querySelectorAll('.play_btn')
+playBtn.forEach((btn,index)=>{
+    btn.addEventListener('click',()=>{
+        
+        videos.forEach((video)=>{
+            if (video.play() &&  !video.parentElement.classList.contains('active') ){
+                console.log('hey')
+                video.pause()
+            }
+            video.parentElement.classList.remove('active')
+           video.pause()
+        video.classList.remove('active') 
+        })
+       
+        videos[index].play()
+        if (videos[index].play()) {
+            videos[index].parentElement.classList.add('active')
+        }else{
+              videos[index].parentElement.classList.remove('active')
+        }
+        videos[index].classList.add('active')
+    })
+})
  // SWIPER
 
 const swiper = new Swiper('.swiper', {
@@ -118,12 +145,18 @@ autoplay:{
 // INTERSECTION OBSERVER
 const options ={
     rootMargin:'0px',
-    threshold:.5
+    threshold:[.25,.5,.75,1]
 }
 
 const func=(entries)=>{
  entries.forEach(entry=>{
     if (entry.isIntersecting) {
+       if (entry.target.className !== 'work-info') {
+        console.log(entry.target)
+              work_Info.forEach((work)=>{
+                work.classList.remove('active')
+            })
+         }
         if (entry.target.id === 'Home') {
             entry.target.classList.add('scroll')
         }
@@ -133,14 +166,48 @@ const func=(entries)=>{
         if (entry.target.id === 'Services') {
             entry.target.classList.add('scroll')
         }
+
+        if (entry.target.className === 'work') {
+            console.log(entry.target)
+        }
    
 
-    observer.unobserve(entry.target)
+    // observer.unobserve(entry.target)
     }
     })
 }
+
+// const options_2 ={
+//     rootMargin:'100px',
+//     threshold:1
+// }
+
+// const func_2=(entries)=>{
+//  entries.forEach(entry=>{
+//     if (entry.isIntersecting) {
+//          console.log(entry)
+   
+//         if (entry.target.className === 'work-info') {
+//             work_Info.forEach((work)=>{
+//                 work.classList.remove('active')
+//             })
+//             console.log(entry.target)
+//           entry.target.classList.add('active')
+//           }
+
+//      // observer_2.unobserve(entry.target)
+//     }
+//     })
+// }
+
 
 const observer = new IntersectionObserver(func,options)
 observer.observe(hero)
 observer.observe(about)
 observer.observe(Services)
+observer.observe(Reviews)
+
+// const observer_2 = new IntersectionObserver(func_2,options_2)
+// work_Info.forEach((work)=>{
+// observer_2.observe(work)
+// })

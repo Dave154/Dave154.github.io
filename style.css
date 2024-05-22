@@ -18,7 +18,13 @@ html{
 
 }
 body{
-/*	overflow: hidden;*/
+
+}
+main{
+/*	position: relative;*/
+	background:linear-gradient(135deg,transparent,#100);
+	margin: 0 auto;
+	overflow: hidden;
 }
 input,button{
 	border: 0;
@@ -38,8 +44,7 @@ h1,h2,h3,h4,h6{
 	padding: 0;
 }
 .container{
-	background:linear-gradient(135deg,transparent,#100);
-
+  margin: 0 auto;
 	scroll-behavior: smooth;
 	height: 100vh;
 	overflow-y: auto;
@@ -50,7 +55,7 @@ h1,h2,h3,h4,h6{
 	scroll-snap-align:start;
 }
 .social-icons{
-	position: fixed;
+	position: absolute;
 	bottom: 10rem;
 	right: 1rem;
 	display: flex;
@@ -83,15 +88,23 @@ h1,h2,h3,h4,h6{
 }
 .nav{
 	display: flex;
+	position: relative;
 	justify-content: space-between;
 	border-bottom-left-radius: 10px;
 	padding: 10px 30px;
 }
-.nav h1{
+.nav div{
+}
+
+.nav div h1 {
 	font-size: 2.5rem;
 	font-family: var(--font-4);
 	font-weight: 400;
+	position: absolute;
+	display: flex;
+	mix-blend-mode: difference;
 }
+
 .toggle-menu{
 	background: transparent;
 	color: beige;
@@ -101,6 +114,7 @@ h1,h2,h3,h4,h6{
 }
 .list{
 	position: absolute;
+
 	top: 0;
 	right: -5px;
 	width: 15rem;
@@ -109,7 +123,7 @@ h1,h2,h3,h4,h6{
 	color: beige;
 	transform: translateX(100%);
 	border-radius: 5px;
-	padding: 10px 20px;
+	padding: 3rem 20px 0;
 	opacity: 0;
 	transition: transform 1s , opacity .5s;
     transform-origin: right;
@@ -190,16 +204,16 @@ h1,h2,h3,h4,h6{
 .main-text{
 	width: 100%;
 	font-family: var(--font-1);
+
 	font-size: clamp(3rem, 12vw, 14rem);
-	letter-spacing: 7px;
+	letter-spacing: 4px;
 	text-transform: uppercase;
-	transform: translateX(150%) scale(0);
-	
+	transform: translateX(150%) ;
 	transition: transform 1s 1s ;
 }
 .text2{
 	font-family: var(--font-1);
-	font-size: 1.2rem;
+	font-size: clamp(.8rem, 3vw, 1.6rem);
 	text-transform: capitalize;
 }
 .sub-text{
@@ -224,7 +238,7 @@ h1,h2,h3,h4,h6{
 
 /*ABOUT*/
 .about{
-  overflow: hidden;
+
 }
 .about-container{
 	display: grid;
@@ -233,8 +247,8 @@ h1,h2,h3,h4,h6{
 	place-items: center;
 	padding: 20px 50px;
 	max-width: 80rem;
-	margin-inline: auto;
-	grid-template-columns: repeat(auto-fit, minmax(350px , 1fr));
+	margin:0 auto;
+	grid-template-columns: repeat(auto-fit, minmax(250px , 1fr));
 }
 .about-image{
 	height: 80%;
@@ -327,13 +341,14 @@ visibility: visible;
 }
 .about-services{
 	position:fixed;
+
 	inset: 0;
 	display: none;
 	width: 100%;
 	height: 100%;
    padding: 0 50px;
 	z-index: 2;
-	backdrop-filter: blur(5px);
+	backdrop-filter: blur(70px);
 }
 .about-services > div{
    position: relative;
@@ -347,7 +362,7 @@ visibility: visible;
 
 .about-service{
 	position: absolute;
-	background-color:chocolate;
+	background-color:rgba(0, 0, 0, .6);
 	box-shadow: ;
 	padding: 20px ;
 	border-radius: 20px;
@@ -457,18 +472,48 @@ visibility: visible;
 	transition: height 1s , border-radius 1s;
 	font-size: 14px;
 }
-
-.work-info p{
-	width: 70%;
-}
-.work:hover .work-info{
+.work-info.active{
 	height: 100%;
 	border-radius: 10px;
 }
 
+.work-info p{
+	width: 70%;
+}
+	.work:hover .work-info{
+	height: 100%;
+	border-radius: 10px;
+}
+.video{
+	display: none;
+}
+.video.active{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: black;
+}
+.play{
+	text-align: center;
+}
+.video.active ~ .play{
+	display: none;
+}
+.play_btn{
+	padding: 5px 10px ;
+  border-radius: 5px;
+  background-color: chocolate;
+  margin-top: 20px;
+  transition: transform .25s ease;
+}
+.play_btn:hover{
+	transform:scale(1.1);
+
+}
+
 /*REVIEWS*/
 .reviews{
-	height: 100%;
+
 }
 .reviews-container{
 	padding:20px;
@@ -483,7 +528,7 @@ visibility: visible;
 }
 .review {
 	border-radius: 10px;
-	height: 20rem;
+
 	color: #1c1c1c;
 	background-color: grey;
 }
@@ -556,13 +601,15 @@ border-radius: 10px;
 
 }
 .contact-container{
-	padding: 3rem;
+	padding: 2rem;
 	display: flex;
 	justify-content: space-between;
 }
 .contact-left{
  flex-basis: 70%;
  padding: 0;
+ position: relative;
+ z-index: 1;
 /* background-color: grey;*/
 }
 .contact-left h2{
@@ -575,7 +622,7 @@ border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-/*	max-width: 30rem;*/
+	max-width: 30rem;
 }
 .contact-info > div{
 	width: 90%;
@@ -660,11 +707,21 @@ footer {
 	max-width: none;
 	width: 90%;
 }
+
+
+
+.contact-right span:nth-child(1){
+display: none;
+}
 /*.contact-right span{
 	display: none;
 }*/
 }
 
+@media (min-width: 966px){
+
+
+}
 
 ::-webkit-scrollbar{
 	width: 6px;
